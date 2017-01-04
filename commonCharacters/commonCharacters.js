@@ -12,6 +12,33 @@
 
 //Works for any number of input strings:
 var commonCharacters = function(string1, string2) {
+	var str = "";
+	console.log(arguments)
+
+	for (var i = 0; i < string1.length; i++) {
+		if(string2.indexOf(string1[i]) > -1) { 
+			if(string1[i] === ' '){
+				continue ;
+			}
+			str+=string1[i]}
+	}
+	return str;
   
 };
+
+
+var commonCharacters2 = function(string1, string2) {
+	var str = "";
+
+	for (var i = 0; i < arguments.length; i++) {
+		if(arguments[i].indexOf(string1[i]) > -1) { 
+			if(string1[i] === ' '){
+				continue ;
+			}
+			str+=string1[i]}
+	}
+	return str;
+  
+};
+
 

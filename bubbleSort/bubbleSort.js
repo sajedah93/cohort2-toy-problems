@@ -31,8 +31,20 @@
 // Feel free to add helper functions if needed
 
 var bubbleSort = function(array) {
+	var temp ;
+	var max ;
+	for (var i = 0; i < array.length; i++) {
+		 max = Math.max(array[i],array[i+1]) 
+			if(max === array[i]){ 
+				 temp = array[i+1];
+				array[i+1]=array[i];
+				array[i] = temp ; 
+			}
+		}
+			return array;
+	}
+	//O(cn^2)
   
-};
 
 /*
 
