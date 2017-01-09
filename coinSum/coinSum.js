@@ -12,3 +12,9 @@ Given that total amount of pences, calculate the number of ways to create that a
 Example:
 coinCombination(200p) //-> 73682
 */
+
+function coinCombination(coins) {
+	var arr = [ 1, 2, 5, 10, 20, 50]
+	//find all the posibilites of summing these elements of the array to het the coins Argument . 
+
+}
