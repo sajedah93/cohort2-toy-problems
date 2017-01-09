@@ -16,5 +16,7 @@ coinCombination(200p) //-> 73682
 function coinCombination(coins) {
 	var arr = [ 1, 2, 5, 10, 20, 50]
 	//find all the posibilites of summing these elements of the array to het the coins Argument . 
+	//push the posibilities to an Array then get the length of the array .length . 
+	
 
 }
