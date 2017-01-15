@@ -13,5 +13,33 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 */
 
 function flatten(){
+	var newArr = [] ;
+	var str ;
+	for (var i = 0; i < arguments.length; i++) {
+		if(Array.isArray(arguments[i])){
+			arguments[i]=arguments[i].toString();
+
+
+			newArr.push(arguments[i][i])
+		}else{
+			if(arguments[i] === null){
+				arguments[i] = 'null'
+			}
+		}
+		newArr.push(arguments[i])
+
+	}
+	for (var i = 0; i < newArr.length; i++) {
+		if(newArr[i] === ','){
+			newArr.splice(i,1)
+		}else if(typeof newArr[i] === 'string'){
+			if(newArr[i].includes(',')){
+			newArr[i]=newArr[i].split(",")
+			newArr[i] = newArr[i].toString()
+		}
+	}
+}
+	return newArr;
+
 
 }
