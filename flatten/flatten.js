@@ -14,13 +14,13 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 
 function flatten(){
 	var newArr = [] ;
+	var arrays = []
 	var str ;
 	for (var i = 0; i < arguments.length; i++) {
 		if(Array.isArray(arguments[i])){
 			arguments[i]=arguments[i].toString();
-
-
 			newArr.push(arguments[i][i])
+
 		}else{
 			if(arguments[i] === null){
 				arguments[i] = 'null'
@@ -43,3 +43,4 @@ function flatten(){
 
 
 }
+//[].concat.apply([], arrays); i found this by search 
