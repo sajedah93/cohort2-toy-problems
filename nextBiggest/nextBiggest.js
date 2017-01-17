@@ -34,9 +34,46 @@ rotate(data, 11)    // => [5, 1, 2, 3, 4]
 rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
-function rotate(array, steps){
+// function rotate(array, steps){
+// 	var newArr = [] ; 
 
+// 	if(steps === 0){
+// 	 	return array ;
+// 	 	break ;
+// 	}else if(steps > 1){
+// 	var resualt = array.pop()
+// 	newArr.push(resualt);
+// 	for (var i = 0; i < array.length; i++) {
+// 		newArr.push(array[i]);
+
+// 	}
+// 	}
+// 	// return rotate(newArr,steps-1) ;
+// 	return newArr ;
+
+
+// }
+
+function rotate( array , steps ){
+  array = array.slice();
+  if(steps === 0){
+  	return array
+  }
+  if(steps > 0){
+  while( steps-- ){
+    var temp = array.shift();
+    array.push( temp )
+  }
+  return array;
+}else if(steps <0){
+	while(steps++){
+		var temp = array.pop()
+		array.push(temp);
+	}
+	return array;
 }
+}
+
 
 /*
 Problem 2 (Advanced)
@@ -56,5 +93,6 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
+
 
 }
