@@ -93,6 +93,22 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
+	var str = num.toString();
+	var arr = str.split("");
 
+	if(arr.length === 2){
+		var temp = arr[0];
+		arr[0]=arr[arr.length-1]
+		arr[arr.length-1] = temp ;
+
+	}else{
+		for (var i = 0; i < arr.length; i++) {
+		var temp = arr[arr.length-2];
+		arr[arr.length-2]=arr[arr.length-1]
+		arr[arr.length-1] = temp ;
+		}
+	}
+	}
+	return Number(arr.join("")) ;
 
 }
