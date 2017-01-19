@@ -18,7 +18,51 @@
 
 
 var LinkedList = function(){
-  //fill me in!
+	
+	this.head = null ;
+	this.tail = null ;
+	this.counter = 0 ;
+
 };
 
-//write methods here!
+LinkedList.prototype.makeNode=function(data){ 
+ return {data:data,
+ 		next:null};
+};
+
+
+LinkedList.prototype.addToTail= function(data){
+	if(this.head === null){
+		this.head = this.makeNode(data);
+		this.tail = this.start ; 
+	}else{
+		this.tail.next = this.makeNode(data)
+		this.tail = this.tail.next;
+	}
+
+};
+
+LinkedList.prototype.removeHead= function(){
+	  if(this.tail !== null){ 
+     var current = this.head.value; 
+    this.head = this.head.next;
+
+    return current  ;}
+
+};
+
+LinkedList.prototype.contains= function(target){
+    while(this.head !== null){
+      if(this.head.data === target){
+       return true;
+      }
+      this.head = this.head.next;
+    }
+    return false; 
+  };
+
+ 
+
+
+
+
