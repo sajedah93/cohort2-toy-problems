@@ -22,5 +22,25 @@ ticTacToe(solvedBoard);//should return 1
 */
 
 function ticTacToe(board){
-	
+	var counter = 0 ;
+	var arr = [];
+	for (var i = 0; i < board.length; i++) {
+		for (var j = 0; j < board.length; j++) {
+			if(board[i][j] === 1 ){
+				counter+=1;
+			}else if(board[i][j]===1 && board[i+1][j+1]===1){
+				counter +=1;
+			}
+		}
+	}
+	if (counter >1){
+		return 1
+	}
+	return -1 ;
 };
+
+// i arrived at 9:15 i don't have time , i will solve it later today 
+
+
+
+
