@@ -51,7 +51,7 @@ var rotateMatrix =function (matrix) {
 		x--;
 
 	}
-	return matrix ;
+	return matrix;
 	
 }
 
