@@ -38,6 +38,35 @@
  */
 
 var rotateMatrix =function (matrix) {
+				 var N = matrix.length -1 ;
+
+	for (var i = 0; i < matrix.length; i++) {
+		for (var j = 0; j < matrix.length; j++) {
+			var temp = matrix[i][x];
+			matrix[i][x] = matrix[i][j]
+			 matrix[i][j] = temp ; 
+
+		
+		}
+		x--;
+
+	}
+	return matrix ;
 	
 }
+
+
+//     for (var i = 0; i < N / 2; i++){
+ 
+//         for (var y = i; y < N-i; y++){
+//             var temp = matrix[x][y];
+//              matrix[i][y] = matrix[y][N-i];
+//              matrix[y][N-i] = matrix[N-i][N-y];
+//              matrix[N-i][N-y] = matrix[N-y][i];
+//              matrix[N-y][i] = temp;
+//         }
+//     }
+//     return matrix
+// }
+
 ///////////////////
