@@ -21,6 +21,7 @@ var spiralTraversal = function(matrix){
         }
         var w = matrix.pop();
        newArr = newArr.concat(w.reverse());
+       // newArr = newArr.concat
        return newArr ; 
      
 };
