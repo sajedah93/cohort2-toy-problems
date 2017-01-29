@@ -27,8 +27,47 @@ dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) => ["WEST
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't need to move at all
 */
 
-var dirReduc = function(directions){
+	var dirReduc = function(directions){
+		var check = function(directions){ 
+			var current ;
+			while(directions.length >0){
+		for (var i = 0; i < directions.length; i++) {
+			
+			if(directions[i] === 'NORTH'){
+				current = directions[i+1];
+				if(directions[i+1] === 'NORTH' || directions[i+1] === 'SOUTH'){
+					directions= directions.slice(2);
+					i-=2; ;
+				}
+			}else if(directions[i] === 'SOUTH'){
+			
+				if(directions[i+1] === 'SOUTH' || directions[i+1] === 'NORTH' || current === 'NORTH' || current === 'SOUTH'){
+					current=directions[i+1];
+					directions =directions.slice(2);
+					i-=2 ; ;
+				}
+			}else if(directions[i] === 'EAST'){
+				if(directions[i+1] === 'EAST' || directions[i+1] === 'WEST' || current === 'WEST' || current === 'EAST'){
+					current=directions[i+1];
+					directions = directions.slice(2);
+					i-=2;;
+				}
+			}else if(directions[i] === 'WEST'){
+				if(directions[i+1] === 'WEST' || directions[i+1] === 'EAST' || current === 'WEST' || current === 'EAST'){
+					current=directions[i+1];
+					 directions = directions.slice(2);
+					i-=2 ;
+				}
+			}
+		}
+		return directions
+
+	}
+	}
+			return check(directions.slice(1));
+
+}
+
+
 	
-	return directions;
-};
 
