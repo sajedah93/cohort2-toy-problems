@@ -64,7 +64,7 @@ dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't nee
 
 	}
 	}
-			return check(directions.slice(1));
+			return check(directions);
 
 }
 
