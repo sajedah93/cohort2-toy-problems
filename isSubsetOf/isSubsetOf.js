@@ -47,10 +47,10 @@ Array.prototype.isSubsetOf = function (arr) {
 		var res = [];
 		var index = this.length ;
 		for (var i = 0; i < this.length; i++) {
-			if(Array.isArray(this[i]) === true){
-				res.push(arrayContainsArray(arr,this[i]))
+			// if(Array.isArray(this[i]) === true){
+			// 	res.push(arrayContainsArray(arr,this[i]))
 
-			}else if(arr.indexOf(this[i]) >-1){
+			if(arr.indexOf(this[i]) >-1){
 				res.push(true)
 			}else{
 				res.push(false)
@@ -65,9 +65,9 @@ Array.prototype.isSubsetOf = function (arr) {
 	}
 
 
-	function arrayContainsArray (superset, subset) {
-	  return subset.every(function (value) {
-	    return (superset.indexOf(value) >= 0);
-	  });
-	}
+	// function arrayContainsArray (superset, subset) {
+	//   return subset.every(function (value) {
+	//     return (superset.indexOf(value) >= 0);
+	//   });
+	// }
 
