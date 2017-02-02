@@ -23,5 +23,51 @@
 */
 
 Array.prototype.isSubsetOf = function (arr) {
-
+	var res = [];
+	var index = this.length ;
+	for (var i = 0; i < this.length; i++) {
+		if(arr.indexOf(this[i]) >-1){
+			res.push(true)
+		}else{
+			res.push(false)
+		}
+	}
+	if(res.includes(false)){
+		return false 
+	}else{
+		return true 
+	}
 }
+
+
+
+
+
+	Array.prototype.isSubsetOf = function (arr) {
+		var res = [];
+		var index = this.length ;
+		for (var i = 0; i < this.length; i++) {
+			if(Array.isArray(this[i]) === true){
+				res.push(arrayContainsArray(arr,this[i]))
+
+			}else if(arr.indexOf(this[i]) >-1){
+				res.push(true)
+			}else{
+				res.push(false)
+			}
+		}
+		console.log(res)
+		if(res.includes(false)){
+			return false 
+		}else{
+			return true 
+		}
+	}
+
+
+	function arrayContainsArray (superset, subset) {
+	  return subset.every(function (value) {
+	    return (superset.indexOf(value) >= 0);
+	  });
+	}
+
