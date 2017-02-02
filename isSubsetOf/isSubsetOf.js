@@ -56,7 +56,6 @@ Array.prototype.isSubsetOf = function (arr) {
 				res.push(false)
 			}
 		}
-		console.log(res)
 		if(res.includes(false)){
 			return false 
 		}else{
