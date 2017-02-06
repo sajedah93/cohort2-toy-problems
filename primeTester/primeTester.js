@@ -4,6 +4,14 @@
  * a prime number, false if it's not.
  */
 var primeTester = function(n) {
+	var i = n-1;
+	while(i >1){
+		if((n%i) === 0){
+			return false
+		}
+		i-- ;
+	}
+	return true ;
 
 }
 
@@ -12,5 +20,15 @@ var primeTester = function(n) {
   * check out the Sieve of Eratosthenes on Wikipedia. (And if you're feeling
   * saucy, check out the Sieve of Atkin.)
   */
+var primeTester = function(n) {
+	var i = n-1;
+	var prime = [] ;
+	while(i >1){
+		if((n%i) === 0){
+			prime.push(i)
+		}
+		i-- ;
+	}
+	return prime ;
 
-  
+}
