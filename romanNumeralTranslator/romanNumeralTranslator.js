@@ -26,4 +26,21 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+	var res = 0 ;
+	var arr = romanNumeral.split('')
+ 
+	// console.log(arr)
+		for (var i = 0; i < arr.length; i++) {
+			// console.log(arr[i])
+			for (var key in DIGIT_VALUES){
+				if(arr[i] === key){
+						console.log('whatever')
+					res+=DIGIT_VALUES[key]
+				}
+			}
+		}
+		return res ;
 }
+
+
+
