@@ -32,3 +32,6 @@ var primeTester = function(n) {
 	return prime ;
 
 }
+
+
+  
