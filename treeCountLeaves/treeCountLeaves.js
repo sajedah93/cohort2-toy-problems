@@ -40,8 +40,24 @@ var Tree = function(value){
 
 
 Tree.prototype.countLeaves = function () {
-}
+  var leaves = 0;
 
+  if (this.children.length === 0) {
+    return 1
+  };
+  var countLeaves = function (node) {
+    if (node.children.length === 0) { 
+      leaves++; 
+    }
+    for (var i = 0; i < node.children.length; i++) {
+      var child = node.children[i];
+      countLeaves(child);
+    }
+  };
+
+  countLeaves(this);
+  return leaves;
+};
 /**
   * You shouldn't need to change anything below here, but feel free to look.
   */
@@ -51,6 +67,7 @@ Tree.prototype.countLeaves = function () {
   * (wrap values in Tree nodes if they're not already)
   */
 Tree.prototype.addChild = function(child){
+  this.children.push(child);
   
 };
 
@@ -59,6 +76,10 @@ Tree.prototype.addChild = function(child){
   * tree __or any of its sub trees__
   */
 Tree.prototype.isDescendant = function(child){
+  // for (var i = 0; i < this.children.length; i++) {
+  //   if(this.children[i]
+  // }
+return (this.children.indexOf(child) > -1)
   
 };
 
@@ -66,5 +87,10 @@ Tree.prototype.isDescendant = function(child){
   * remove an immediate child
   */
 Tree.prototype.removeChild = function(child){
+  for (var i = 0; i < this.children.length; i++) {
+    if(this.children[i] === child)
+    this.children.slice(1,i)
+  }
+
   
 };
