@@ -14,7 +14,25 @@ abc(); // should return 'a' again on this fourth call
 */
 
 
+//this function will run by calling makeLooper('abc') , wi†hout closures 
+	var counter = 0 ; 
+
 function makeLooper(string){
+
+	var length = string.length ;
+	var last = string[string.length-1]
+	var res = '';
+
+	for (var i = 0; i < string.length; i++) {
+			res = string[counter];
+	}
+	if(string[counter] === last){
+		counter = 0;
+	}else{
+			counter++;
+
+	}
+	return res ;
 
 };
 
@@ -52,7 +70,17 @@ pyramid(1666); // should === 16
 */
 
 function pyramid(cans){
-	
+	var res = []; 
+	// var x = 0
+	while(cans > 1){
+
+		res.push(Math.sqrt(cans-1) + Math.sqrt(cans))
+		console.log(cans);
+		console.log(res)
+			cans--;
+	}
+
+	return res.length ;
 };
 
 
