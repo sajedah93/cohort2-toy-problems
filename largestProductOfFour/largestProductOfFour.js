@@ -36,10 +36,25 @@
 *
 */
 
-
 var largestProductOfFour = function(array) {
-
+	var newArr = [] ;
+	for (var i = 0; i < array.length; i++) {
+		var max = 0 ;
+		for (var j = 0; j < array[i].length; j++) {
+			if(array[i][j] > max){
+				max = array[i][j]
+			}
+		}
+		newArr.push(max)
+	}
+	var res = 1 ;
+	for (var i = 0; i < newArr.length; i++) {
+		res*= newArr[i]
+	}
+	return res  ;
 };
+
+
 
 
 
